@@ -1,0 +1,31 @@
+namespace fbs_test;
+
+//-----------------------------------
+
+struct Color { 
+  red:  float;
+  green:float;
+  blue: float;
+}
+
+table Identity {
+	id: short; 
+	key: string;
+}
+
+struct Location {   
+  x:short;
+  y:short;
+}
+
+table Composite {
+	shade: Color;	
+	name:string; 
+	ref_data: [Identity];
+	loc: Location;	
+	bytes:[ubyte];	
+}
+
+root_type Composite;
+
+//-----------------------------------
